@@ -1,0 +1,27 @@
+<div class="filters">
+  <mat-form-field>
+    <mat-label>Sort</mat-label>
+    <mat-select  
+    panelClass="sort-select"
+    [(ngModel)]="sort"
+    (selectionChange)="searchEvents(sort)"
+    >
+      <mat-option value="score.desc">Score</mat-option>
+      <mat-option value="datetime_utc.desc">Date</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+
+<div class="events">  
+  <ng-container *ngFor = "let event of events">
+    <div class="event"  (click)="openEventDetails(event.id)">
+      
+      <p class="event-title"> {{event.title}}</p>
+
+      <p class = "event-type">{{event.type}}</p>
+  
+      <div class="event-date">{{event.datetime_utc}}</div>
+    </div>
+  </ng-container> 
+</div>
+  

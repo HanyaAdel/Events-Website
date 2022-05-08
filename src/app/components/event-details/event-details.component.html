@@ -1,0 +1,22 @@
+<div class="details">
+    <div class="event-content">
+        <div class="details-wrapper">
+            <div class="event-header">
+                <h1 class="event-header-title" *ngIf = event>{{event.title}}</h1>
+                <h2 class="event-header-release-date" *ngIf = event> Release: {{ event.announce_date | date}}</h2>
+                <p class="performers" *ngIf = event>
+                    <span *ngFor="let performer of event.performers; let last = last">
+                        {{ performer.name }}
+                        <span *ngIf="!last">, </span>
+                    </span>
+                </p>
+                <div class="event-gauge">
+                    <a *ngIf = event
+                    href="{{ event.url }}">
+                    Metacritic</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+  
