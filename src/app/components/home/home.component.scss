@@ -1,3 +1,4 @@
+
 .filters {
     max-width: 1200px;
     margin: 40px auto;
@@ -30,9 +31,9 @@
 
 
 .event {
+    display: flex;
     width: 80%;
     margin: 10px;
-    padding: 10px;
     height: 100px;
     overflow: hidden;
     border-radius: 5px;
@@ -45,7 +46,13 @@
         box-shadow: 4px 3px 11px 6px rgb(200 152 44 / 46%);
         transform: translateY(-3px);
     }
-
+    &-left-box{
+        padding: 10px;
+        width: 80%;
+        border-radius: 5px;
+        margin: 0;
+ 
+    }
     &-title {
         color: rgba(0, 0, 0, 0.715);
         font-weight: 700;
@@ -54,9 +61,21 @@
         white-space: nowrap;
         text-overflow: ellipsis;
         overflow: hidden;
+    }    
+
+    &-right-box{
+        width: 20%;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        background-color: black;
+        
     }
     
     &-date {
-        margin-right: 10px;
+        color: #fff;
+        font-size: 25px;
     }
 }

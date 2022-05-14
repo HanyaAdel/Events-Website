@@ -16,11 +16,16 @@
   <ng-container *ngFor = "let event of events">
     <div class="event"  (click)="openEventDetails(event.id)">
       
-      <p class="event-title"> {{event.title}}</p>
+      <div class = "event-left-box">
+        <p class="event-title"> {{event.title}}</p>
 
-      <p class = "event-type">{{event.type}}</p>
-  
-      <div class="event-date">{{event.datetime_utc | date}}</div>
+        <p class = "event-type">{{event.type}}</p>
+      </div>
+
+      <div class = "event-right-box">
+        <div class="event-date">{{event.datetime_utc | date}}</div>
+      </div>
+      
     </div>
   </ng-container> 
 </div>

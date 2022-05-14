@@ -10,11 +10,11 @@
                         <span *ngIf="!last">, </span>
                     </span>
                 </p>
-                <div class="event-gauge">
-                    <a *ngIf = event
-                    href="{{ event.url }}">
-                    Metacritic</a>
-                </div>
+                <button mat-raised-button color="warn" class = "event-link"> 
+                    <a *ngIf = event href="{{ event.url }}">
+                        Metacritic
+                    </a>
+                </button>
             </div>
         </div>
     </div>

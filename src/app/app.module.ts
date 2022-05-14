@@ -15,6 +15,7 @@ import { HomeComponent } from './components/home/home.component';
 import { HttpErrorsInterceptor } from './interceptors/http-errors.interceptors';
 import { HttpHeadersInterceptor } from './interceptors/http-headers.interceptors';
 import { EventDetailsComponent } from './components/event-details/event-details.component';
+import {MatButtonModule} from '@angular/material/button';
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import { EventDetailsComponent } from './components/event-details/event-details.
     MatSelectModule,
     MatTabsModule,
     MatIconModule,
+    MatButtonModule 
   ],
   providers: [
     {
