@@ -1,21 +1,15 @@
 .filters {
     max-width: 1200px;
-    margin: 20px auto;
+    margin: 40px auto;
     padding-left: 20px;
 }
   
 ::ng-deep {
     .mat-form-field-infix {
-        background-color: #cdd2eb;
+        background-color:#fff;
     }
         
-    .mat-select-value,
-    .mat-select-arrow,
-    .mat-form-field-hide-placeholder .mat-select-placeholder,
-    .mat-form-field-appearance-legacy .mat-form-field-label {
-        color: hsl(0, 0%, 0%) !important;
-        opacity: 1;
-    }
+
     .mat-form-field-infix {
         border-color: #fff !important;
         border-top: none;
@@ -23,9 +17,6 @@
     }
     .mat-form-field-appearance-legacy .mat-form-field-label {
         padding-left: 5px;
-    }
-    .mat-form-field-appearance-legacy .mat-form-field-underline {
-        background-color: #fff !important;
     }
 }
 
@@ -41,10 +32,11 @@
 .event {
     width: 80%;
     margin: 10px;
+    padding: 10px;
     height: 100px;
     overflow: hidden;
     border-radius: 5px;
-    background-color: #bf9a9a;
+    background-color: #cac7c7;
     box-shadow: 4px 3px 8px 0px rgb(200 152 44 / 22%);
     transition-duration: 0.3s;
     cursor: pointer;
@@ -55,7 +47,7 @@
     }
 
     &-title {
-        color: #fff;
+        color: rgba(0, 0, 0, 0.715);
         font-weight: 700;
         font-size: 22px;
         margin-bottom: 20px;
