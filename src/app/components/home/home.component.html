@@ -28,5 +28,14 @@
       
     </div>
   </ng-container> 
+
+  <mat-paginator
+               [pageSize]="pageSize"
+               [length]="total"
+               [pageIndex]="currentPage"
+               (page)="handlePage($event)"
+               aria-label="Select page">
+  </mat-paginator>
+
 </div>
   

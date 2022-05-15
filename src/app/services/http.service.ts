@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { forkJoin, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { environment as env } from 'src/environments/environment';
+
 import { APIResponse } from '../model';
 import { Event } from '../model';
 
@@ -13,11 +14,11 @@ export class HttpService {
 
   constructor(private http: HttpClient) { }
 
-  getEventList(sort: string, search?: string): Observable<APIResponse<Event>> {
-    let params = new HttpParams().set('sort', sort);
+  getEventList(sort: string, perPage:number, pageNumber:number,search?: string): Observable<APIResponse<Event>> {
+    let params = new HttpParams().set('sort', sort).set('per_page', perPage).set('page', pageNumber)
 
     if (search) {
-      params = new HttpParams().set('sort', sort).set('q', search);
+      params = new HttpParams().set('sort', sort).set('per_page', perPage).set('page', pageNumber).set('q', search);
     }
 
     return this.http.get<APIResponse<Event>>(`${env.BASE_URL}/events`, {

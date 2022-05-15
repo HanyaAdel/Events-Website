@@ -10,9 +10,12 @@ export interface Event{
     performers: Array<Performer>
 
 }
-
+export interface MetaData{
+    total:number
+}
 export interface APIResponse <T>{
     events: T[];
+    meta: MetaData
 
 }
 export interface Venue{

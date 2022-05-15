@@ -1,36 +1,38 @@
 .details{
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .event {
-    
+    &-content {
+        width: 80%;
+        background-color: beige;
+        border-radius: 10px;
+        box-shadow: 4px 3px 11px 6px rgb(200 152 44 / 46%);
+        
+    }
     &-banner {
-        height: 442px;
+        
+        height: 300px;
         overflow: hidden;
+        display: flex;
+        justify-content: space-between;
+        &-title {
+            font-size: 60px;
+            color: #000;
+            font-weight: 700;
+            padding: 30px;
+            white-space: nowrap;
+            overflow: scroll;
+        }
         &-img {
-            width: 100%;
+            object-fit: contain;
             filter: blur(5px);
         }
     }
-  
-    &-content {
-        text-align: center;
-        position: relative;
-        
-        border: 2px solid black;
-    }
-    &-link {
-        width: 300px;
-    }
     &-header {
-        &-title {
-            font-size: 20px;
-            color: #000;
-            font-weight: 700;
-            line-height: 70px;
-            white-space: nowrap;
-        }
+
   
         &-release-date {
             color: #fff;

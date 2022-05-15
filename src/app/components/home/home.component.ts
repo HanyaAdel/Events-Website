@@ -11,7 +11,10 @@ import { APIResponse, Event } from 'src/app/model';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  
+  currentPage = 1;             //the initial page to display
+  total = 250  //total number of countries in the list
+  pageSize = 20;  
+
   public sort!: string;
   public events: Event[] = [];
   private routeSub!: Subscription;
@@ -22,37 +25,42 @@ export class HomeComponent implements OnInit {
     private router: Router,
     private activatedRoute: ActivatedRoute) { }
 
-    ngOnInit(): void {
-      this.routeSub = this.activatedRoute.params.subscribe((params: Params) => {
-        if (params['event-search']) {
-          this.searchEvents('announce_date.desc', params['event-search']);
-        } else {
-          this.searchEvents('announce_date.desc');
-        }
+  ngOnInit(): void {
+    this.routeSub = this.activatedRoute.params.subscribe((params: Params) => {
+      if (params['event-search']) {
+        this.searchEvents('announce_date.desc', params['event-search']);
+      } else {
+        this.searchEvents('announce_date.desc');
+      }
 
+    });
+  }
+  public handlePage(e: any) {
+    this.currentPage = e.pageIndex;
+    this.pageSize = e.pageSize;
+    this.ngOnInit()
+  }
+  searchEvents(sort: string, search?: string): void {
+    this.eventSub = this.httpService.getEventList(sort, this.pageSize, this.currentPage, search)
+      .subscribe((eventList: APIResponse<Event>) => {
+        this.events = eventList.events;
+        this.total=eventList.meta.total;
+        console.log(eventList);
       });
-    }
+  }
+  openEventDetails(id: string): void {
+    this.router.navigate(['details', id]);
   
-    searchEvents(sort: string, search?: string): void {
-      this.eventSub = this.httpService.getEventList(sort, search)
-        .subscribe((eventList: APIResponse<Event>) => {
-          this.events = eventList.events;
-          console.log(eventList);
-        });
-    }
-    openEventDetails(id: string): void {
-      this.router.navigate(['details', id]);
-      
-    }
+  }
   
   ngOnDestroy(): void {
-      if (this.eventSub) {
-        this.eventSub.unsubscribe();
-      }
-  
-      if (this.routeSub) {
-        this.routeSub.unsubscribe();
-      }
+    if (this.eventSub) {
+      this.eventSub.unsubscribe();
     }
+  
+    if (this.routeSub) {
+      this.routeSub.unsubscribe();
+    }
+  }
 
 }

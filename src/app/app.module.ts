@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatIconModule } from '@angular/material/icon';
+import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
@@ -18,12 +19,13 @@ import { EventDetailsComponent } from './components/event-details/event-details.
 import {MatButtonModule} from '@angular/material/button';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     EventDetailsComponent,
-    SearchBarComponent
+    SearchBarComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,7 +37,8 @@ import {MatButtonModule} from '@angular/material/button';
     MatSelectModule,
     MatTabsModule,
     MatIconModule,
-    MatButtonModule 
+    MatButtonModule,
+    MatPaginatorModule 
   ],
   providers: [
     {

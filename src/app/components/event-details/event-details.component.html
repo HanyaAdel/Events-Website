@@ -1,8 +1,13 @@
 <div class="details">
     <div class="event-content">
+        
+        <div class="event-banner">
+            <h1 class="event-banner-title" *ngIf = event>{{event.title}}</h1>
+            <img *ngIf = event src = "{{event.performers[0].image}}">
+        </div>
         <div class="details-wrapper">
             <div class="event-header">
-                <h1 class="event-header-title" *ngIf = event>{{event.title}}</h1>
+                
                 <h2 class="event-header-release-date" *ngIf = event> Release: {{ event.announce_date | date}}</h2>
                 <p class="performers" *ngIf = event>
                     <span *ngFor="let performer of event.performers; let last = last">
