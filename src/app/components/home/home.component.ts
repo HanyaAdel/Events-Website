@@ -36,7 +36,7 @@ export class HomeComponent implements OnInit {
     });
   }
   public handlePage(e: any) {
-    this.currentPage = e.pageIndex;
+    this.currentPage = e.pageIndex+1;
     this.pageSize = e.pageSize;
     this.ngOnInit()
   }
