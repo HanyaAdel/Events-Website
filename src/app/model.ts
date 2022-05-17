@@ -2,12 +2,13 @@ export interface Event{
     title: string;
     description: string;
     type: string;
-    score: string;
+    score: number;
     url: string;
     datetime_utc: string;
     id: string;
     announce_date:string;
     performers: Array<Performer>
+    venue: Venue
 
 }
 export interface MetaData{
@@ -19,8 +20,10 @@ export interface APIResponse <T>{
 
 }
 export interface Venue{
-    city: string;
     name: string;
+    url: string;
+    address: string;
+    display_location: string;
 }
 export interface Performer{
     name: string;

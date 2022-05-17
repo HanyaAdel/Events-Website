@@ -3,41 +3,64 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 30px;
 }
+
 .event {
     &-content {
         width: 80%;
         background-color: beige;
         border-radius: 10px;
         box-shadow: 4px 3px 11px 6px rgb(200 152 44 / 46%);
-        
-    }
-    &-banner {
-        
-        height: 300px;
-        overflow: hidden;
-        display: flex;
-        justify-content: space-between;
-        &-title {
-            font-size: 60px;
-            color: #000;
-            font-weight: 700;
-            padding: 30px;
-            white-space: nowrap;
-            overflow: scroll;
-        }
-        &-img {
-            object-fit: contain;
-            filter: blur(5px);
-        }
-    }
-    &-header {
 
-  
-        &-release-date {
-            color: #fff;
-            font-weight: 700;
+        &-header {
+            height: 230px;
+            display: flex;
+            justify-content: space-between;
+            &-left{
+                padding: 30px;
+                width: 80%;
+                &-title {
+                    height: fit-content;
+                    font-size: 40px;
+                    color: #000;
+                    font-weight: 700;
+                                  
+                }
+                &-date{
+                    display: flex;
+                    align-items: center;
+                    margin: 10px;
+                    padding-left: 10px;
+                    color: #000;
+                }
+                &-location{
+                    padding-left: 10px;
+                    display: flex;
+                    margin: 10px;
+                    align-items: center;
+                }
+                &-form{
+                    margin: 10px;
+                    padding-left: 10px;
+                    display: flex;
+                    align-items: center;
+                    height: 30px;
+                }
+            }
+            &-link{
+                width: 20%;
+                margin: 10px;
+                
+                &-btn{
+                    font-size: 25px;
+                    width: 100%;
+                    color: #000;
+                    height: 100%;
+                    background-color: #fff;
+                    border-radius: 10px;
+                }
+            }
         }
-
     }
 }

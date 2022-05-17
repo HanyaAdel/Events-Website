@@ -11,9 +11,9 @@ import { APIResponse, Event } from 'src/app/model';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  currentPage = 1;             //the initial page to display
-  total = 250  //total number of countries in the list
-  pageSize = 20;  
+  currentPage = 1;
+  total = 250 
+  pageSize = 10;  
 
   public sort!: string;
   public events: Event[] = [];
@@ -32,7 +32,6 @@ export class HomeComponent implements OnInit {
       } else {
         this.searchEvents('announce_date.desc');
       }
-
     });
   }
   public handlePage(e: any) {

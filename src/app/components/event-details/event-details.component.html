@@ -1,27 +1,48 @@
 <div class="details">
     <div class="event-content">
         
-        <div class="event-banner">
-            <h1 class="event-banner-title" *ngIf = event>{{event.title}}</h1>
-            <img *ngIf = event src = "{{event.performers[0].image}}">
+        <div class="event-content-header">
+            <div class="event-content-header-left">
+
+                <h1 class="event-content-header-left-title" *ngIf = event>{{event.title}}</h1>
+
+                <form [formGroup]="form" class="event-content-header-left-form" >
+                    <ngx-star-rating formControlName="rating"  [disabled] ="true"></ngx-star-rating>
+                </form>
+                <div class="event-content-header-left-date" *ngIf = event>
+                    <mat-icon>date_range</mat-icon>
+                    {{event.datetime_utc | date}}
+                </div>
+                <div class="event-content-header-left-location">
+                    <mat-icon> location_on</mat-icon>
+                    <a *ngIf = event href="{{event.venue.url}}">
+                        {{event.venue.name}} - {{event.venue.address}}, {{event.venue.display_location}}
+                    </a>
+
+                </div>
+
+            </div>
+            <a *ngIf = event href="{{ event.url }}" class = "event-content-header-link">
+                <button mat-raised-button color="warn" class = "event-content-header-link-btn" > 
+                    Book Now!
+                </button>
+            </a>
         </div>
+
+        
         <div class="details-wrapper">
-            <div class="event-header">
+            <div class="event-h">
                 
-                <h2 class="event-header-release-date" *ngIf = event> Release: {{ event.announce_date | date}}</h2>
+                
                 <p class="performers" *ngIf = event>
                     <span *ngFor="let performer of event.performers; let last = last">
                         {{ performer.name }}
                         <span *ngIf="!last">, </span>
                     </span>
                 </p>
-                <button mat-raised-button color="warn" class = "event-link"> 
-                    <a *ngIf = event href="{{ event.url }}">
-                        Metacritic
-                    </a>
-                </button>
+
             </div>
         </div>
+        <img *ngIf = event src = "{{event.performers[0].image}}">
     </div>
 </div>
-  
