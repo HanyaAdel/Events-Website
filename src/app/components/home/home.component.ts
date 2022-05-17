@@ -44,7 +44,6 @@ export class HomeComponent implements OnInit {
       .subscribe((eventList: APIResponse<Event>) => {
         this.events = eventList.events;
         this.total=eventList.meta.total;
-        console.log(eventList);
       });
   }
   openEventDetails(id: string): void {

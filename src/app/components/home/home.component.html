@@ -6,8 +6,10 @@
     [(ngModel)]="sort"
     (selectionChange)="searchEvents(sort)"
     >
-      <mat-option value="score.desc">Score</mat-option>
-      <mat-option value="datetime_utc.desc">Date</mat-option>
+      <mat-option value="score.desc">Score: High to Low</mat-option>
+      <mat-option value="score.asc">Score: Low to High</mat-option>
+      <mat-option value="datetime_utc.desc">Date: Newest to Oldest</mat-option>
+      <mat-option value="datetime_utc.asc">Date: Oldest to Newest</mat-option>
     </mat-select>
   </mat-form-field>
 </div>
@@ -16,14 +18,19 @@
   <ng-container *ngFor = "let event of events">
     <div class="event"  (click)="openEventDetails(event.id)">
       
-      <div class = "event-left-box">
-        <p class="event-title"> {{event.title}}</p>
+      <div class = "event-left">
+        <p class="event-left-title"> {{event.title}}</p>
 
-        <p class = "event-type">{{event.type}}</p>
+        <div class = "event-left-type">
+          <mat-icon>whatshot</mat-icon>
+
+          {{event.type}}
+        </div>
+        
       </div>
 
-      <div class = "event-right-box">
-        <div class="event-date">{{event.datetime_utc | date}}</div>
+      <div class = "event-right">
+        <div class="event-right-date">{{event.datetime_utc | date}}</div>
       </div>
       
     </div>
