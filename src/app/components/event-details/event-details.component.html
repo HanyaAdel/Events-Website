@@ -6,9 +6,9 @@
 
                 <h1 class="event-content-header-left-title" *ngIf = event>{{event.title}}</h1>
 
-                <form [formGroup]="form" class="event-content-header-left-form" >
+                <!-- <form [formGroup]="form" class="event-content-header-left-form" >
                     <ngx-star-rating formControlName="rating"  [disabled] ="true"></ngx-star-rating>
-                </form>
+                </form> -->
                 <div class="event-content-header-left-date" *ngIf = event>
                     <mat-icon>date_range</mat-icon>
                     {{event.datetime_utc | date}}
@@ -29,20 +29,32 @@
             </a>
         </div>
 
-        
-        <div class="details-wrapper">
-            <div class="event-h">
+        <hr>
+        <div class="event-content-ticket" >
+
+            <h2>Ticket Details</h2>
+            <div class="event-content-ticket-details" *ngIf = event >
                 
-                
-                <p class="performers" *ngIf = event>
-                    <span *ngFor="let performer of event.performers; let last = last">
-                        {{ performer.name }}
-                        <span *ngIf="!last">, </span>
-                    </span>
-                </p>
+                Average Price: {{ event.stats.average_price }}<br>
+                Lowest Price: {{ event.stats.lowest_price }}<br>
+                Highest Price: {{ event.stats.highest_price }}<br>
 
             </div>
         </div>
-        <img *ngIf = event src = "{{event.performers[0].image}}">
+
+        <hr>
+
+        <div class="event-content-performers" >
+
+            <h2>Performers</h2>
+            <div class="event-content-performers-details" *ngIf = event >
+                <div *ngFor="let performer of event.performers; let last = last">
+                    {{ performer.name }}
+                    <img  src = "{{performer.image}}">
+                    <span *ngIf="!last">, </span>
+                </div>
+
+            </div>
+        </div>
     </div>
 </div>

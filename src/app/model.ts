@@ -9,6 +9,12 @@ export interface Event{
     announce_date:string;
     performers: Array<Performer>
     venue: Venue
+    stats:Stats
+}
+export interface Stats{
+    average_price: number
+    lowest_price: number
+    highest_price: number
 
 }
 export interface MetaData{
