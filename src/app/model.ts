@@ -23,7 +23,6 @@ export interface APIResponse <T>{
     meta: {
         total:number
     }
-
 }
 export interface Venue{
     name: string;

@@ -6,12 +6,10 @@ import { Observable } from "rxjs";
 export class HttpHeadersInterceptor implements HttpInterceptor {
   constructor() {}
 
-  intercept(
-    req: HttpRequest<any>,
-    next: HttpHandler): Observable<HttpEvent<any>> {
+  intercept( req: HttpRequest<any>,  next: HttpHandler): Observable<HttpEvent<any>> {
     req = req.clone({
       setParams: {
-        client_id: 'MjY3OTk1NjF8MTY1MTQ0Mzg5OS42MzA5NDc ',
+        client_id: 'MjY3OTk1NjF8MTY1MTQ0Mzg5OS42MzA5NDc'
       }
     });
     return next.handle(req);

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonModule } from "@angular/common";
 import { HttpService } from 'src/app/services/http.service';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
@@ -23,7 +22,8 @@ export class HomeComponent implements OnInit {
   constructor(    
     private httpService: HttpService,
     private router: Router,
-    private activatedRoute: ActivatedRoute) { }
+    private activatedRoute: ActivatedRoute) 
+  {}
 
   ngOnInit(): void {
     this.routeSub = this.activatedRoute.params.subscribe((params: Params) => {
@@ -46,6 +46,7 @@ export class HomeComponent implements OnInit {
         this.total=eventList.meta.total;
       });
   }
+  
   openEventDetails(id: string): void {
     this.router.navigate(['details', id]);
   

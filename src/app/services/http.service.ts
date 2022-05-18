@@ -21,9 +21,7 @@ export class HttpService {
       params = new HttpParams().set('sort', sort).set('per_page', perPage).set('page', pageNumber).set('q', search);
     }
 
-    return this.http.get<APIResponse<Event>>(`${env.BASE_URL}/events`, {
-      params: params,
-    });
+    return this.http.get<APIResponse<Event>>(`${env.BASE_URL}/events`, {params: params});
   }
 
   getEventDetails(id: string): Observable<Event> {
