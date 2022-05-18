@@ -8,8 +8,7 @@ export class HttpHeadersInterceptor implements HttpInterceptor {
 
   intercept(
     req: HttpRequest<any>,
-    next: HttpHandler
-  ): Observable<HttpEvent<any>> {
+    next: HttpHandler): Observable<HttpEvent<any>> {
     req = req.clone({
       setParams: {
         client_id: 'MjY3OTk1NjF8MTY1MTQ0Mzg5OS42MzA5NDc ',

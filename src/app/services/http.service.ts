@@ -1,8 +1,8 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { forkJoin, Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 import { environment as env } from 'src/environments/environment';
+
 
 import { APIResponse } from '../model';
 import { Event } from '../model';
@@ -27,17 +27,8 @@ export class HttpService {
   }
 
   getEventDetails(id: string): Observable<Event> {
-    let eventInfoRequest = this.http.get(`${env.BASE_URL}/events/${id}`);
+    let eventInfoRequest  = this.http.get<Event>(`${env.BASE_URL}/events/${id}`);
 
-    
-    return forkJoin({
-      eventInfoRequest
-    }).pipe(
-      map((resp: any) => {
-        return {
-          ...resp['eventInfoRequest'],
-        };
-      })
-    );
-  }
+    return eventInfoRequest;
+    }
 }

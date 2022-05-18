@@ -12,7 +12,7 @@ import { APIResponse, Event } from 'src/app/model';
 })
 export class HomeComponent implements OnInit {
   currentPage = 1;
-  total = 250 
+  total = 0;
   pageSize = 10;  
 
   public sort!: string;
