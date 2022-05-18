@@ -9,6 +9,10 @@ body {
     padding: 0;
     box-sizing: border-box;
 }
-input.star:checked ~ label.star:before {
-    font-size: 20px !important;
+
+label.star:before {
+    font-size: 1.5rem;
+}
+div.stars {
+    width: auto !important;
 }

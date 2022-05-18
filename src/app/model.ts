@@ -11,18 +11,18 @@ export interface Event{
     venue: Venue
     stats:Stats
 }
+
 export interface Stats{
     average_price: number
     lowest_price: number
     highest_price: number
+}
 
-}
-export interface MetaData{
-    total:number
-}
 export interface APIResponse <T>{
     events: T[];
-    meta: MetaData
+    meta: {
+        total:number
+    }
 
 }
 export interface Venue{
@@ -31,9 +31,14 @@ export interface Venue{
     address: string;
     display_location: string;
 }
+
 export interface Performer{
     name: string;
     score: number;
     image: string;
+    stats:{
+        event_count: number;
+    }
+    url: string;
 
 }

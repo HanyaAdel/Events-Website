@@ -55,6 +55,11 @@ export class EventDetailsComponent implements OnInit, OnDestroy {
       })
       });
   }
+  // getRating(score:number): void{
+  //   this.form = this.fb.group({
+  //     rating: [score * this.n]
+  //   })
+  // }
 
   ngOnDestroy(): void {
     if (this.eventSub) {

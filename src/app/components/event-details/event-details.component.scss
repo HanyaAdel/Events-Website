@@ -3,69 +3,86 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 30px;
+    margin-top: 2rem;
 }
 
 .event {
     
     &-content {
-        padding: 30px;
+        padding: 2rem;
         width: 80%;
         background-color: beige;
         border-radius: 10px;
         box-shadow: 4px 3px 11px 6px rgb(200 152 44 / 46%);
-
-        &-header {
-            height: 230px;
-            display: flex;
-            justify-content: space-between;
-            &-left{
-                
-                width: 80%;
-                &-title {
-                    height: fit-content;
-                    font-size: 40px;
-                    color: #000;
-                    font-weight: 700;
-                                  
-                }
-                &-date{
-                    display: flex;
-                    align-items: center;
-                    margin-top: 30px;
-                    padding: 8px;
-                    color: #000;
-                }
-                &-location{
-                    padding:8px;
-                    display: flex;
-                    align-items: center;
-                }
-                &-form{
-                    margin: 10px;
-                    padding-left: 10px;
-                    display: flex;
-                    align-items: center;
-                    height: 30px;
-                }
-            }
-            &-link{
-                width: 20%;
-                margin: 10px;
-                
-                &-btn{
-                    font-size: 25px;
-                    width: 100%;
-                    color: #000;
-                    height: 100%;
-                    background-color: #fff;
-                    border-radius: 10px;
-                }
-            }
+        
+    }
+    &-header {
+        height: 15rem;
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid gray;
+        &-left{
+            width: 80%;
         }
-        &-ticket{
-            
-            margin-bottom: 20px;
+        &-right{
+            width: 20%;
+            margin: 1rem;
+        }
+    }
+    &-link{
+        font-size: 25px;
+        width: 100%;
+        color: #000;
+        height: 100%;
+        background-color: #fff;
+        border-radius: 10px;
+    }
+    &-title {
+        height: fit-content;
+        font-size: 2.5rem;
+        color: #000;
+        font-weight: 700;                 
+    }
+    &-rating{
+        margin-top: 2rem;
+        // border: 1px solid black;
+        display: flex;
+        align-items: center;
+        height:fit-content;
+    }
+    &-date{
+        display: flex;
+        align-items: center;
+        margin-top: 1.5rem;
+        padding: 8px;
+        color: #000;
+    }
+    &-location{
+        padding:8px;
+        display: flex;
+        align-items: center;
+    }
+
+    &-tickets{
+        height: 8rem;
+        border-bottom: 1px solid gray;
+    }
+    &-singlePerformer{
+        margin: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        
+        &-img{
+            border: 1px solid black;
+            border-radius: 7px;
+            width: 40%;
+        }
+
+        &-detail{
+            padding-left: 15px;
+            width: 60%;
+            height: 100%;
         }
     }
 }
